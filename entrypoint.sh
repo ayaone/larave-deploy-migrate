@@ -17,7 +17,7 @@ else
 	printf '%b\n' "$DEPLOY_KEY" > /root/.ssh/id_rsa
 	chmod 400 /root/.ssh/id_rsa
 
-	echo $'\n' "------ CONFIG SUCCESSFUL! ---------------------" $'\n'
+	echo $'\n' "------ CONFIG SUCCESSFUL! test ---------------------" $'\n'
 fi
 
 if [ ! -z "$SSH_PORT" ];
