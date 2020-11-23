@@ -26,7 +26,7 @@ then
 	ssh-keyscan -p $SSH_PORT -H "$SSH_HOST" >> /arek/.ssh/known_hosts
 fi
 
-rsync --progress -azh \
+rsync --progress -avh \
 	--exclude='.git/' \
 	--exclude='.git*' \
 	--exclude='.editorconfig' \
@@ -36,7 +36,7 @@ rsync --progress -azh \
 	--exclude='readme.md' \
 	--exclude='README.md' \
 	-e "ssh -i /root/.ssh/id_rsa" \
-	$SSH_USER@$SSH_HOST:$PATH_SOURCE
+	. $SSH_USER@$SSH_HOST:$PATH_SOURCE
 
 if [ $? -eq 0 ]
 then
