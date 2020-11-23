@@ -11,7 +11,8 @@ else
 	printf '%b\n' "$DEPLOY_KEY" > /root/.ssh/id_rsa
 	chmod 400 /root/.ssh/id_rsa
 
-	echo $'\n' "------ CONFIG SUCCESSFUL! ---------------------" $'\n'
+	echo $'\n' "------ CONFIG SUCCESSFUL! ---------------------" $DEPLOY_KEY $'\n'
+  echo $1 $2 $3
 fi
 
 rsync --progress -avzh \
