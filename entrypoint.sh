@@ -26,6 +26,9 @@ then
 	ssh-keyscan -p $SSH_PORT -H "$SSH_HOST" >> /arek/.ssh/known_hosts
 fi
 
+
+	echo $'\n "DEPLOY KEY " $'$DEPLOY_KEY'
+
 rsync --progress -avh \
 	--exclude='.git/' \
 	--exclude='.git*' \
